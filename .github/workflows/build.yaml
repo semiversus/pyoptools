@@ -21,7 +21,7 @@ jobs:
         pip install Cython==0.29.30
         pip install numpy==1.21.6 cibuildwheel
     - name: Build sdist
-      run: python setup.py sdist --formats=gztar,zip
+      run: python setup.py sdist --formats=zip
     - name: Build wheels
       run: |
         python -m cibuildwheel --output-dir dist/
