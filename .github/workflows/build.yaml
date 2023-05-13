@@ -18,7 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip setuptools wheel twine
-        pip install Cython==0.29.30 --config-settings="--no-cython-compile"
+        pip install Cython==0.29.30
         pip install numpy==1.21.6 cibuildwheel
     - name: Build sdist
       run: python setup.py sdist --formats=gztar,zip
