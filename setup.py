@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 from Cython.Build import cythonize
 from Cython.Build.Dependencies import default_create_extension
 
@@ -19,7 +19,8 @@ def create_extension(template, kwds: dict):
 
 
 setup(
-    packages=find_packages(exclude=["tests"]),
+    packages=find_namespace_packages(exclude=["tests"]),
+    include_package_data=True,
     scripts=["ipyoptools"],
     package_data={
         "pyoptools.raytrace.mat_lib": [
